@@ -12,5 +12,7 @@ app.use(express.json());
 
 // routes
 app.use("/api/products", productRoutes);
-
+app.get('/', (req, res) => {
+  res.send('NextCommerce is cooking')
+})
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
