@@ -24,10 +24,10 @@ router.get("/:id", async (req, res) => {
 // post add product
 router.post("/", async (req, res) => {
   const db = await connectToDatabase();
-  const { name, description, price } = req.body;
+  const { name, description, price, image } = req.body;
   const result = await db
     .collection("products")
-    .insertOne({ name, description, price });
+    .insertOne({ name, description, price, image });
   res.status(201).json(result);
 });
 
